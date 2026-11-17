@@ -86,7 +86,20 @@ VS Code (`.vscode/mcp.json`):
 Claude (claude.ai or Desktop): Settings → Connectors → Add custom connector → `https://wintraits.com/mcp`.
 
 ChatGPT (developer mode): Settings → Connectors → Create → URL `https://wintraits.com/mcp`, no authentication.
+Cline: MCP Servers → Configure → add to `cline_mcp_settings.json` (nothing to install or build; the header is optional):
 
+```json
+{
+  "mcpServers": {
+    "wintraits": {
+      "type": "streamableHttp",
+      "url": "https://wintraits.com/mcp",
+      "headers": { "Authorization": "Bearer <key>" },
+      "disabled": false
+    }
+  }
+}
+```
 Any other client: add a remote server with URL `https://wintraits.com/mcp`; optionally the header `Authorization: Bearer <key>`.
 
 ---
