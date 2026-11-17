@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.wintraits/wintraits",
+  "title": "Wintraits",
+  "description": "Winning attributes of Amazon best sellers, for your listing, shop or product, and a check.",
+  "version": "1.2.0",
+  "websiteUrl": "https://wintraits.com/agentes",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://wintraits.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Optional. \"Bearer <key>\" with a free key from https://wintraits.com/agentes. Open beta: free until 31 Jan 2027 (60 queries a day without a key, 600 with one).",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
