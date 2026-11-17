@@ -10,11 +10,13 @@ Wintraits tells you which attributes and combinations the products that succeed 
 
 ## Coverage
 
-- **Scan** (what today's best sellers have, trait by trait): beauty, personal care, small appliances, books, board games, puzzles and perfumes on Amazon Spain, plus France, Germany and Italy, with new categories every week. `wintraits_categorias_disponibles` lists them with their data date.
-- **Match** (which launches succeed, followed from day one, with a sealed exam): face serums and facial moisturisers on Amazon Spain; more on the way.
+- **Scan** (what today's best sellers have, trait by trait): 25 categories (beauty, personal care, small appliances, electronics, home, books, board games, puzzles, perfumes…) on Amazon Spain, France, Germany and Italy, with new categories every week. `wintraits_buscar_categoria` finds a category from plain words; `wintraits_categorias_disponibles` lists them all with their data date.
+- **Match** (which launches succeed, followed from day one for six months): five beauty categories on Amazon Spain (face serums, moisturisers, eye contour, sunscreens and facial cleansers). Sealed exam for serums and sunscreens on 27 December 2026: rules fixed in advance, result published either way. Until then Match is descriptive, not validated.
 
 ## What's new
 
+- Find a category from plain words in English or Spanish (`wintraits_buscar_categoria`) and the top 10 best sellers of a Scan category by index (`wintraits_ranking`).
+- Match now covers five beauty categories on Amazon Spain.
 - Many ASINs at once, for agencies and catalogues: REST API `POST https://wintraits.com/api/lote` (see below) and, with no coding, https://wintraits.com/varios-asin with CSV download.
 - Winning attributes of any Scan category without pasting a listing (`wintraits_scan_perfil`) and how the category has moved (`wintraits_scan_historia`).
 - Wintraits Scan Index split into product and presentation; a part that cannot be computed comes back empty with its reason, never 0.
@@ -26,6 +28,8 @@ Wintraits tells you which attributes and combinations the products that succeed 
 | Tool | What it does |
 |---|---|
 | `wintraits_categorias_disponibles` | Categories and countries studied. |
+| `wintraits_buscar_categoria` | Finds the category code from plain words ("air fryer", "board games"). Start here. |
+| `wintraits_ranking` | Scan: top 10 best sellers of a category by Wintraits Scan Index. |
 | `wintraits_scan_perfil` | Scan: every trait that sets today's best sellers apart, with %, type and medians. No listing needed. |
 | `wintraits_scan_historia` | Scan: how the category's Wintraits Scan Index has moved over time. |
 | `wintraits_chequeo_rapido` | Scan: whether your listing (or technical sheet, or draft) has, trait by trait, what today's best sellers in its category have. |
@@ -89,4 +93,4 @@ Any other client: add a remote server with URL `https://wintraits.com/mcp`; opti
 
 ## En español
 
-Wintraits dice qué atributos y combinaciones tienen los productos que triunfan en Amazon, categoría a categoría, y revisa un producto, una ficha o una idea frente a ellos. Sirve también fuera de Amazon: para diseñar el producto, el encargo al fabricante, el envase o la ficha de tu tienda o de otro marketplace (es una referencia, no una prueba). Es un servidor MCP remoto: `https://wintraits.com/mcp`. Beta abierta: todo gratis y sin límite hasta el 31-ene-2027 (clave gratis en https://wintraits.com/agentes, con precio fundador). Scan: qué tienen hoy los más vendidos, en belleza, cuidado personal, pequeño electrodoméstico, libros, juegos y puzles (España, Francia, Alemania e Italia), con los atributos ganadores de cada categoría sin pegar ninguna ficha (`wintraits_scan_perfil`); Match, con examen sellado: sérums e hidratantes faciales de Amazon España. Son patrones estadísticos (correlación, no causalidad); cítalos con `cita.texto_para_citar`. Novedad: varios ASIN a la vez, para agencias y catálogos, con la API REST (`POST https://wintraits.com/api/lote`, documentada en https://wintraits.com/agentes#api) o sin programar en https://wintraits.com/varios-asin (descarga en CSV).
+Wintraits dice qué atributos y combinaciones tienen los productos que triunfan en Amazon, categoría a categoría, y revisa un producto, una ficha o una idea frente a ellos. Sirve también fuera de Amazon: para diseñar el producto, el encargo al fabricante, el envase o la ficha de tu tienda o de otro marketplace (es una referencia, no una prueba). Es un servidor MCP remoto: `https://wintraits.com/mcp`. Beta abierta: todo gratis y sin límite hasta el 31-ene-2027 (clave gratis en https://wintraits.com/agentes, con precio fundador). Scan: qué tienen hoy los más vendidos en 25 categorías (belleza, cuidado personal, pequeño electrodoméstico, electrónica, hogar, libros, juegos, puzles…) de Amazon España, Francia, Alemania e Italia, con los atributos ganadores de cada categoría sin pegar ninguna ficha (`wintraits_scan_perfil`); busca la categoría con palabras (`wintraits_buscar_categoria`). Match: lanzamientos seguidos desde el primer día en cinco categorías de belleza de Amazon España (sérums, hidratantes, contorno de ojos, solares y limpiadores); examen sellado de sérums y solares el 27-dic-2026, con el resultado publicado salga como salga. Son patrones estadísticos (correlación, no causalidad); cítalos con `cita.texto_para_citar`. Novedad: varios ASIN a la vez, para agencias y catálogos, con la API REST (`POST https://wintraits.com/api/lote`, documentada en https://wintraits.com/agentes#api) o sin programar en https://wintraits.com/varios-asin (descarga en CSV).
